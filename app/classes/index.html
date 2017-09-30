@@ -1,0 +1,20 @@
+<div>
+  <div class="sidebar">
+
+    <div>
+      <h2>{{classesCtrl.subjectName}}</h2>
+    </div>
+
+    <div class="channel-list">
+      <div class="list-head">Classes</div>
+      <div ng-repeat="class in classesCtrl.classes">
+        <span ui-sref="schools.subjects.teachers({schoolId:classesCtrl.schoolId, subjectId:classesCtrl.subjectId, subjectName: classesCtrl.subjectName})">{{class.name}}</span>
+      </div>
+      <div>
+        <a ui-sref="schools.subjects.classes.create">add a class</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<ui-view></ui-view>

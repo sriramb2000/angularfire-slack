@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <h1>Add a Teacher</h1>
+  </div>
+
+  <form ng-submit="teachersCtrl.createTeacher()">
+    <div class="input-group">
+      <input type="text" placeholder="Teacher Name" ng-model="teachersCtrl.newTeacher.name">
+    </div>
+    <input type="submit" value="Add Teacher">
+  </form>
+</div>

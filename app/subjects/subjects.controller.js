@@ -3,6 +3,7 @@ angular.module('lemonApp')
     var subjectsCtrl = this;
     subjectsCtrl.subjects = subjects;
     subjectsCtrl.schoolName = schoolName;
+    subjectsCtrl.schoolId = schoolId;
 
     subjectsCtrl.newSubject = {
       name:''
