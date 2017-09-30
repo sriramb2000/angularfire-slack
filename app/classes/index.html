@@ -8,7 +8,7 @@
     <div class="channel-list">
       <div class="list-head">Classes</div>
       <div ng-repeat="class in classesCtrl.classes">
-        <span>{{class.name}}</span>
+        <span ui-sref="schools.subjects.teachers({schoolId:classesCtrl.schoolId, subjectId:classesCtrl.subjectId, subjectName: classesCtrl.subjectName})">{{class.name}}</span>
       </div>
       <div>
         <a ui-sref="schools.subjects.classes.create">add a class</a>

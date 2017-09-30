@@ -61,13 +61,34 @@ angular
           },
           subjectName: function($stateParams, subjects){
             return subjects.$getRecord($stateParams.subjectId).name;
-          }
+          },
+          subjectId: ['$stateParams', function($stateParams){
+            return $stateParams.subjectId;
+          }]
         }
       })
       .state('schools.subjects.classes.create',{
         url: '/create',
         templateUrl: 'classes/create.html',
-        controller: 'ClassesCtrl as subjectsCtrl'
+        controller: 'ClassesCtrl as classesCtrl'
+      })
+      .state('schools.subjects.teachers', {
+        url: '/{schoolId}/{subjectId}/{subjectName}/teachers',
+        templateUrl: 'teachers/index.html',
+        controller: 'TeachersCtrl as teachersCtrl',
+        resolve:{
+          teachers: function($stateParams, Teachers){
+            return Teachers.forSubject($stateParams.schoolId, $stateParams.subjectId).$loaded();
+          },
+          subjectName: function($stateParams){
+            return $stateParams.subjectName;
+          }
+        }
+      })
+      .state('schools.subjects.teachers.create',{
+        url: '/create',
+        templateUrl: 'teachers/create.html',
+        controller: 'TeachersCtrl as teachersCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
