@@ -34,10 +34,10 @@
     <div class="boi2">
        <div class="words">Search for your school to get started:</div>
        <form> <i class="fa fa-search search" aria-hidden="true"></i>
-         <input type="text" ng-model="search" ng-keyup="searchSchoolsn()"></input>
+         <input type="text" ng-model="schoolsCtrl.search" ng-keyup="searchSchoolsn()"></input>
        </form>
        <div id="schoolid" class="schoolcont">
-			   <div id="{{$index + 1}}" class="schoolname" ng-repeat="x in dschools | limitTo : 10">{{x}}</div>
+			   <div id="{{$id}}" class="schoolname" ng-repeat="school in schoolsCtrl.schools | limitTo : 10">{{x}}</div>
 
        </div>
     </div>

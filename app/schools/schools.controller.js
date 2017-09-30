@@ -7,6 +7,8 @@ angular.module('lemonApp')
       name:''
     };
 
+    schoolsCtrl.search = '';
+
     schoolsCtrl.createSchool = function(){
       schoolsCtrl.schools.$add(schoolsCtrl.newSchool).then(function(){
         schoolsCtrl.newSchool = {
@@ -15,19 +17,19 @@ angular.module('lemonApp')
         $state.go('schools');
       });
     };
-    // $scope.searchSchoolsn = function(){
-    //   var temp = $scope.dschools.length;
-		// 	var sumting = $scope.search;
-    //   for(var i = 0; i < temp; i++){
-		// 		var rip = $scope.dschools[i].substring(0, sumting.length);
-		// 		var areEqual = rip.toUpperCase() === sumting.toUpperCase();
-		// 		if(areEqual){
-		// 			document.getElementById(i + 1).style.display = "inline-block";
-    //
-		// 		}else {
-		// 			document.getElementById(i + 1).style.display = "none";
-    //
-		// 		}
-		// 	}
-		// }
+    schoolsCtrl.searchSchoolsn = function(){
+      var temp = $scope.dschools.length;
+			var sumting = $scope.search;
+      for(var i = 0; i < temp; i++){
+				var rip = $scope.dschools[i].substring(0, sumting.length);
+				var areEqual = rip.toUpperCase() === sumting.toUpperCase();
+				if(areEqual){
+					document.getElementById(i + 1).style.display = "inline-block";
+
+				}else {
+					document.getElementById(i + 1).style.display = "none";
+
+				}
+			}
+		}
   });
