@@ -8,7 +8,7 @@
     <div class="subject-list">
       <div class="list-head">Subjects</div>
       <div ng-repeat="subject in subjectsCtrl.subjects">
-        <span>{{subject.name}}</span>
+        <span ui-sref="schools.subjects.classes({schoolId: subjectsCtrl.schoolId, subjectId: subject.$id})">{{subject.name}}</span>
       </div>
       <div>
         <a ui-sref="schools.subjects.create">add a subject</a>
@@ -17,4 +17,4 @@
 
   </div>
 </div>
-  <ui-view></ui-view>
+<ui-view></ui-view>
