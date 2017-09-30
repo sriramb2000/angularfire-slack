@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <h1>Add a Subject</h1>
+  </div>
+
+  <form ng-submit="subjectsCtrl.createSubject()">
+    <div class="input-group">
+      <input type="text" placeholder="Subject Name" ng-model="subjectsCtrl.newSubject.name">
+    </div>
+    <input type="submit" value="Add Subject">
+  </form>
+</div>

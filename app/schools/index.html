@@ -1,0 +1,21 @@
+<ui-view>
+<div>
+  <div class="sidebar">
+
+    <div>
+      <h2>lemonBoard</h2>
+    </div>
+
+    <div class="channel-list">
+      <div class="list-head">Schools</div>
+      <div ng-repeat="school in schoolsCtrl.schools">
+        <span ui-sref="schools.subjects({schoolId: school.$id})">{{school.name}}</span>
+      </div>
+      <div>
+        <a ui-sref="schools.create">add a school</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</ui-view>

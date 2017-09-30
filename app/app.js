@@ -2,33 +2,63 @@
 
 /**
  * @ngdoc overview
- * @name angularfireSlackApp
+ * @name lemonApp
  * @description
  * # angularfireSlackApp
  *
  * Main module of the application.
  */
 angular
-  .module('angularfireSlackApp', [
+  .module('lemonApp', [
     'firebase',
-    'angular-md5',
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'home/home.html'
+      .state('schools', {
+        url:'/',
+        templateUrl:'/schools/index.html',
+        controller:'SchoolsCtrl as schoolsCtrl',
+        resolve: {
+          schools: function(Schools){
+            return Schools.$loaded();
+          }
+        }
       })
-      .state('login', {
-        url: '/login',
-        templateUrl: 'auth/login.html'
+      .state('schools.create', {
+        url:'create',
+        templateUrl: 'schools/create.html',
+        controller: 'SchoolsCtrl as schoolsCtrl'
       })
-      .state('register', {
-        url: '/register',
-        templateUrl: 'auth/register.html'
+      .state('schools.subjects',{
+        url: '{schoolId}/subjects',
+        templateUrl: 'subjects/index.html',
+        controller: 'SubjectsCtrl as subjectsCtrl',
+        resolve:{
+          subjects: function($stateParams, Subjects){
+            return Subjects.forSchool($stateParams.schoolId).$loaded();
+          },
+          schoolName: function($stateParams, schools){
+            return schools.$getRecord($stateParams.schoolId).name;
+          }
+        }
+      })
+      .state('schools.subjects.create',{
+        url: '/create',
+        templateUrl: 'subjects/create.html',
+        controller: 'SubjectsCtrl as subjectsCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
   })
-  .constant('FirebaseUrl', 'https://slack.firebaseio.com/');
+  .config(function(){
+    var config = {
+    apiKey: "AIzaSyCmd3rvnURbK877stU8w7FL-ELe7SRbXMY",
+    authDomain: "lemonboardh.firebaseapp.com",
+    databaseURL: "https://lemonboardh.firebaseio.com",
+    projectId: "lemonboardh",
+    storageBucket: "lemonboardh.appspot.com",
+    messagingSenderId: "153189141062"
+    };
+    firebase.initializeApp(config);
+  });
