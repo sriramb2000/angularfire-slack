@@ -1,8 +1,9 @@
 angular.module('lemonApp')
-  .controller('TeachersCtrl', function(teachers, subjectName, $firebaseArray, $stateParams){
+  .controller('TeachersCtrl', function(teachers, subjectName, className, $firebaseArray, $stateParams){
     var teachersCtrl = this;
     teachersCtrl.teachers = teachers;
     teachersCtrl.subjectName = subjectName;
+    teachersCtrl.className = className;
     teachersCtrl.newTeacher = {
       name:''
     };

@@ -73,7 +73,7 @@ angular
         controller: 'ClassesCtrl as classesCtrl'
       })
       .state('schools.subjects.teachers', {
-        url: '/{schoolId}/{subjectId}/{subjectName}/teachers',
+        url: '/{schoolId}/{subjectId}/{subjectName}/{className}/teachers',
         templateUrl: 'teachers/index.html',
         controller: 'TeachersCtrl as teachersCtrl',
         resolve:{
@@ -82,6 +82,9 @@ angular
           },
           subjectName: function($stateParams){
             return $stateParams.subjectName;
+          },
+          className: function($stateParams){
+            return $stateParams.className;
           }
         }
       })
@@ -89,6 +92,9 @@ angular
         url: '/create',
         templateUrl: 'teachers/create.html',
         controller: 'TeachersCtrl as teachersCtrl'
+      })
+      .state('schools.subjects.classes.teachers.messages',{
+        url: ''
       });
 
     $urlRouterProvider.otherwise('/');
