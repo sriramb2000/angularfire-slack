@@ -25,13 +25,13 @@
   <div class="sidebar">
     <ul class="ul1">
       <hr class="shr">
-      <li ng-click="showClasses('math')">
-        <div class="classli">Math</div>
+      <li ng-click="showClasses({{subject.name}})" ng-repeat="subject in subjectsCtrl.subjects">
+        <div class="classli">{{subject.name}}</div>
         <ul class="submath" id="submath">
           <li ng-repeat="x in mathclasses">{{x}}</li>
         </ul>
       </li>
-      <li ng-click="showClasses('english')">
+      <!-- <li ng-click="showClasses('english')">
         <div class="classli">English</div>
         <ul class="subeng" id="subenglish">
           <li ng-repeat="x in engclasses">{{x}}</li>
@@ -54,7 +54,7 @@
         <ul class="subetc" id="subetcetera">
           <li ng-repeat="x in etcclasses">{{x}}</li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </div>
   <div class="reststuff">
