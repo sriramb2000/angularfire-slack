@@ -1,5 +1,5 @@
 <ui-view>
-<div>
+<!-- <div>
   <div class="sidebar">
 
     <div>
@@ -17,16 +17,15 @@
     </div>
 
   </div>
-</div>
-
-<div class="bg"></div>
+</div> -->
+<div class="bodycontainer">
+<div class="bglul"></div>
 <div class="container">
-  <div class="overlay"></div>
   <div class="red"></div>
   <div class="bracket1"></div>
   <div class="bracket2"></div>
   <div class="addschool">If the search does not return your school, add it by clicking here</div>
-  <div class="title">
+  <div class="titlelul">
     Lemon Board <i class="fa fa-lemon-o lemon" aria-hidden="true"></i>
   </div>
   <hr>
@@ -37,10 +36,11 @@
          <input type="text" ng-model="schoolsCtrl.search" ng-keyup="schoolsCtrl.searchSchoolsn()"></input>
        </form>
        <div id="schoolid" class="schoolcont">
-			   <div id="{{school.$id}}" class="schoolname" ng-repeat="school in schoolsCtrl.schools | limitTo : 10">{{school.name}}</div>
+			   <div id="{{school.$id}}" ui-sref="schools.subjects({schoolId: school.$id})" class="schoolname" ng-repeat="school in schoolsCtrl.schools | limitTo : 10">{{school.name}}</div>
 
        </div>
     </div>
   </div>
+</div>
 </div>
 </ui-view>

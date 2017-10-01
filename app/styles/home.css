@@ -1,4 +1,4 @@
-html,body{
+.bodycontainer{
   height:100%;
   width:100%;
   margin-top:0 !important;
@@ -9,7 +9,7 @@ html,body{
   background-image:url("https://wallpaperscraft.com/image/venice_italy_gondola_river_102083_1920x1080.jpg");
 }
 
-.bg{
+.bglul{
   opacity:0.4;
   background-color:white;
   width:100%;
@@ -64,7 +64,7 @@ html,body{
   text-align:center;
 }
 
-.title{
+.titlelul{
   font-family: 'Molengo', sans-serif;
   font-size:2.1em;
   position:absolute;
@@ -92,7 +92,7 @@ hr{
   margin-top:8%;
 }
 
-.main{
+.main1{
   position:absolute;
   margin-left:18%;
   margin-top:9%;
