@@ -1,9 +1,9 @@
-body {
+.body {
   padding: 0;
   margin-left: 0;
   margin-top:0;
   font-family: 'Molengo', sans-serif;
-  background-image:url("https://wallpaperscraft.com/image/venice_italy_gondola_river_102083_1920x1080.jpg");
+  background-image:url("italy.jpg");
 }
 
 .bg{
@@ -92,7 +92,7 @@ body {
   cursor:pointer;
 }
 
-input[type="text"]{
+.inputmain{
   border-radius:5px;
   border-style:solid;
   border-width:1px;

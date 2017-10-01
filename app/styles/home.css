@@ -78,7 +78,7 @@
   margin-left:3%;
 }
 
-hr{
+.hra{
   position:absolute;
   margin-top:8%;
   width:80%;
@@ -153,7 +153,7 @@ form{
   margin-bottom:4%;
 }
 
-input[type="text"]{
+.inputhome{
   font-size:0.9em;
   width:410px;
   border-radius:5px;
