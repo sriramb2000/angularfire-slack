@@ -36,7 +36,7 @@
          <input class="inputhome" type="text" ng-model="schoolsCtrl.search" ng-keyup="schoolsCtrl.searchSchoolsn()"></input>
        </form>
        <div id="schoolid" class="schoolcont">
-			   <div id="{{school.$id}}" ui-sref="schools.subjects({schoolId: school.$id})" class="schoolname" ng-repeat="school in schoolsCtrl.schools | limitTo : 10">{{school.name}}</div>
+			   <div id="{{school.$id}}" ui-sref="schools.subjects({schoolId: school.$id})" class="schoolname" ng-repeat="school in schoolsCtrl.schools">{{school.name}}</div>
 
        </div>
     </div>

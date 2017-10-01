@@ -1,24 +1,28 @@
 <div class="header">
-  <h1>{{ messagesCtrl.className }}</h1>
+  <div class="titlebar1">
+    <span style="cursore:pointer;" ui-sref="schools"><i class="fa fa-lemon-o lemon2" aria-hidden="true"></i>Lemon Board<span> - {{classesCtrl.subjectName}} - {{ messagesCtrl.className }}
+  </div>
 </div>
 
-<div class="message-wrap" ng-repeat="message in messagesCtrl.messages">
-  <div class="message-info">
-    <div class="user-name">
-      <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
-    </div>
-    <div class="message">
-     {{ message.body }}
+<div class="complete-wrap">
+  <div class="message-wrap" ng-repeat="message in messagesCtrl.messages" ng-class-odd="'striped'">
+    <div class="message-info">
+      <div class="user-name">
+        <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
+      </div>
+      <div class="message">
+       {{ message.body }}
+      </div>
     </div>
   </div>
 </div>
 
-<form class="message-form" ng-submit="messagesCtrl.sendMessage()">
+<form class="message-form">
 
   <div class="input-group">
-    <input type="text" class="form-control" ng-model="messagesCtrl.message" placeholder="Type in /ask for an assignment">
+    <input type="text" class="form-control" ng-model="messagesCtrl.message" placeholder="Type in / ask for an assignment">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="submit">Send</button>
+      <i style="cursor:pointer; font-size:1.1em; margin-left:1%;" ng-click="messagesCtrl.sendMessage()" class="fa fa-lemon-o" aria-hidden="true"></i>
     </span>
   </div>
 

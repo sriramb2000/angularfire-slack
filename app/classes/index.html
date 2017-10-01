@@ -20,20 +20,20 @@
 <ui-view></ui-view> -->
 <ui-view>
 <div class="titlebar">
-  <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board - {{classesCtrl.subjectName}}
+  <span ui-sref="schools"><i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>Lemon Board - {{classesCtrl.subjectName}}</span>
 </div>
-<div class="add">
+<div class="add bigfont">
 
   <form>
     <div class="input-group">
       Add a Class:
-      <input type="text" placeholder="Class Name" ng-model="classesCtrl.newClass.name">
+      <input class="inputinput" type="text" placeholder="Class Name" ng-model="classesCtrl.newClass.name">
       <i ng-click="classesCtrl.createClass()" class="fa fa-plus" aria-hidden="true"></i>
     </div>
   </form>
 </div>
 <div class="schoolscont">
-  <div class="schoolname" ng-repeat="class in classesCtrl.classes" ui-sref="schools.subjects.classes.messages({classId:class.$id})">
+  <div class="schoolname1" ng-repeat="class in classesCtrl.classes" ui-sref="schools.subjects.classes.messages({classId:class.$id})">
     {{class.name}}
   </div>
 

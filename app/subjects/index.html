@@ -23,18 +23,21 @@
 <div class="main">
 
   <div class="sidebar">
+    <div style="text-align:center;font-size:1.3em;">Subjects</div>
     <ul class="ul1">
       <hr class="shr">
       <li ng-repeat="subject in subjectsCtrl.subjects">
         <div class="classli" ui-sref="schools.subjects.classes({schoolId: subjectsCtrl.schoolId, subjectId: subject.$id})">{{subject.name}}</div>
       </li>
-
+      <li class="classli" ui-sref="schools.subjects.create">
+          Add a Subject
+      </li>
     </ul>
   </div>
   <div class="reststuff">
   <ui-view>
     <div class="titlebar">
-      <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board
+      <span ui-sref="schools"><i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>Lemon Board</span>
     </div>
   </ui-view>
   </div>

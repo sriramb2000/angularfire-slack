@@ -11,49 +11,17 @@
   </form>
 </div> -->
 
-<div class="body">
-<div class="bg"></div>
-<div class="main">
 
-  <div class="sidebar">
-    <ul class="ul1">
-      <hr class="shr">
-      <li ng-click="showClasses({{subject.name}})" ng-repeat="subject in subjectsCtrl.subjects">
-        <div class="classli">{{subject.name}}</div>
-        <ul class="submath" id="submath">
-          <li ng-repeat="x in mathclasses">{{x}}</li>
-        </ul>
-      </li>
-    </ul>
+<div>
+  <div>
+    <h1>Add a Subject</h1>
   </div>
-  <div class="reststuff">
-    <div class="titlebar">
-      lemon board <i class="fa fa-lemon-o lemon" aria-hidden="true"></i> - AP Calculus
-    </div>
-    <div class="add">
 
-      <form>
-        <div class="input-group">
-          Add a Subject:
-          <input class="inputmain" type="text" placeholder="Subject Name" ng-model="subjectsCtrl.newSubject.name">
-          <i ng-click="subjectsCtrl.createSubject()" class="fa fa-plus" aria-hidden="true"></i>
-        </div>
-      </form>
+  <form>
+    <div class="input-group">
+      Add a Subject:
+      <input class="inputmain" type="text" placeholder="Subject Name" ng-model="subjectsCtrl.newSubject.name">
+      <i ng-click="subjectsCtrl.createSubject()" class="fa fa-plus" aria-hidden="true"></i>
     </div>
-    <div class="schoolscont">
-      <div class="school">
-        Kurdziel
-      </div>
-      <div class="school">
-        Moore
-      </div>
-      <div class="school">
-        Kinney
-      </div>
-      <div class="school">
-        Dinneen
-      </div>
-    </div>
-  </div>
-</div>
+  </form>
 </div>
