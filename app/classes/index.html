@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <div class="sidebar">
 
     <div>
@@ -17,4 +17,23 @@
 
   </div>
 </div>
-<ui-view></ui-view>
+<ui-view></ui-view> -->
+
+<div class="titlebar">
+  <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board - {{classesCtrl.subjectName}}
+</div>
+<div class="add">
+
+  <form>
+    <div class="input-group">
+      Add a Teacher:
+      <input type="text" placeholder="Teacher Name" ng-model="schoolsCtrl.newSchool.name">
+      <i ng-click="schoolsCtrl.createSchool()" class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+  </form>
+</div>
+<div class="schoolscont">
+  <div class="school" ng-repeat="class in classesCtrl.classes" >
+  </div>
+
+</div>
