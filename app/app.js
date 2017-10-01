@@ -71,30 +71,6 @@ angular
         url: '/create',
         templateUrl: 'classes/create.html',
         controller: 'ClassesCtrl as classesCtrl'
-      })
-      .state('schools.subjects.teachers', {
-        url: '/{schoolId}/{subjectId}/{subjectName}/{className}/teachers',
-        templateUrl: 'teachers/index.html',
-        controller: 'TeachersCtrl as teachersCtrl',
-        resolve:{
-          teachers: function($stateParams, Teachers){
-            return Teachers.forSubject($stateParams.schoolId, $stateParams.subjectId).$loaded();
-          },
-          subjectName: function($stateParams){
-            return $stateParams.subjectName;
-          },
-          className: function($stateParams){
-            return $stateParams.className;
-          }
-        }
-      })
-      .state('schools.subjects.teachers.create',{
-        url: '/create',
-        templateUrl: 'teachers/create.html',
-        controller: 'TeachersCtrl as teachersCtrl'
-      })
-      .state('schools.subjects.classes.teachers.messages',{
-        url: ''
       });
 
     $urlRouterProvider.otherwise('/');

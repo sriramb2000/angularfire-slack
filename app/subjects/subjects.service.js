@@ -6,9 +6,6 @@ angular.module('lemonApp')
     return{
       forSchool: function(schoolId){
         return $firebaseArray(schoolSubjectsRef.child(schoolId));
-      },
-      forSubject: function(schoolId, subjectId){
-        return $firebaseArray(classesRef.child(schoolId+'/'+subjectId));
       }
     };
   });

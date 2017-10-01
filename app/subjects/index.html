@@ -26,65 +26,17 @@
     <ul class="ul1">
       <hr class="shr">
       <li ng-click="showClasses({{subject.name}})" ng-repeat="subject in subjectsCtrl.subjects">
-        <div class="classli">{{subject.name}}</div>
-        <ul class="submath" id="submath">
-          <li ng-repeat="x in mathclasses">{{x}}</li>
-        </ul>
+        <div class="classli" ui-sref="schools.subjects.classes({schoolId: subjectsCtrl.schoolId, subjectId: subject.$id})">{{subject.name}}</div>
       </li>
-      <!-- <li ng-click="showClasses('english')">
-        <div class="classli">English</div>
-        <ul class="subeng" id="subenglish">
-          <li ng-repeat="x in engclasses">{{x}}</li>
-        </ul>
-      </li>
-      <li ng-click="showClasses('social studies')">
-        <div class="classli">Social Studies</div>
-        <ul class="subss" id="subsocialstudies">
-          <li ng-repeat="x in ssclasses">{{x}}</li>
-        </ul>
-      </li>
-      <li ng-click="showClasses('science')">
-        <div class="classli">Science</div>
-        <ul class="subsci" id="subscience">
-          <li ng-repeat="x in sciclasses">{{x}}</li>
-        </ul>
-      </li>
-      <li ng-click="showClasses('et cetera')">
-        <div class="classli">Et Cetera</div>
-        <ul class="subetc" id="subetcetera">
-          <li ng-repeat="x in etcclasses">{{x}}</li>
-        </ul>
-      </li> -->
+
     </ul>
   </div>
   <div class="reststuff">
+    <ui-view>
     <div class="titlebar">
-      lemon board <i class="fa fa-lemon-o lemon" aria-hidden="true"></i> - AP Calculus
+      <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board
     </div>
-    <div class="add">
-
-      <form>
-        <div class="input-group">
-          Add a Teacher:
-          <input class="inputmain" type="text" placeholder="Teacher Name" ng-model="schoolsCtrl.newSchool.name">
-          <i ng-click="schoolsCtrl.createSchool()" class="fa fa-plus" aria-hidden="true"></i>
-        </div>
-      </form>
-    </div>
-    <div class="schoolscont">
-      <div class="school">
-        Kurdziel
-      </div>
-      <div class="school">
-        Moore
-      </div>
-      <div class="school">
-        Kinney
-      </div>
-      <div class="school">
-        Dinneen
-      </div>
-    </div>
+  </ui-view>
   </div>
 </div>
 </div>
@@ -104,5 +56,3 @@
 </script>
 </body>
 </html>
-
-<ui-view></ui-view>
