@@ -1,4 +1,5 @@
-angular.module('MessagesCtrl', function(className, messages, $firebaseArray){
+angular.module('lemonApp')
+  .controller('MessagesCtrl', function(className, messages, $firebaseArray){
   var messagesCtrl = this;
   messagesCtrl.messages = messages;
   messagesCtrl.className = className;

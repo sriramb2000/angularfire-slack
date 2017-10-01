@@ -81,6 +81,7 @@ angular
             return Messages.forClass($stateParams.classId).$loaded();
           },
           className: function($stateParams, classes){
+            console.log(classes.$getRecord($stateParams.classId).name);
             return classes.$getRecord($stateParams.classId).name;
           }
         }
