@@ -71,6 +71,19 @@ angular
         url: '/create',
         templateUrl: 'classes/create.html',
         controller: 'ClassesCtrl as classesCtrl'
+      })
+      .state('schools.subjects.classes.messages', {
+        url: '/{classId}/messages',
+        templateUrl: 'messages/index.html',
+        controller: 'MessagesCtrl as messagesCtrl',
+        resolve:{
+          messages: function($stateParams, Messages){
+            return Messages.forClass($stateParams.classId).$loaded();
+          },
+          className: function($stateParams, classes){
+            return classes.$getRecord($stateParams.classId).name;
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

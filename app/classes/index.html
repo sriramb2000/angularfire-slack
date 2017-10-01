@@ -18,7 +18,7 @@
   </div>
 </div>
 <ui-view></ui-view> -->
-
+<ui-view>
 <div class="titlebar">
   <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board - {{classesCtrl.subjectName}}
 </div>
@@ -26,14 +26,16 @@
 
   <form>
     <div class="input-group">
-      Add a Teacher:
-      <input type="text" placeholder="Teacher Name" ng-model="schoolsCtrl.newSchool.name">
-      <i ng-click="schoolsCtrl.createSchool()" class="fa fa-plus" aria-hidden="true"></i>
+      Add a Class:
+      <input type="text" placeholder="Class Name" ng-model="classesCtrl.newClass.name">
+      <i ng-click="classesCtrl.createClass()" class="fa fa-plus" aria-hidden="true"></i>
     </div>
   </form>
 </div>
 <div class="schoolscont">
-  <div class="school" ng-repeat="class in classesCtrl.classes" >
+  <div class="schoolname" ng-repeat="class in classesCtrl.classes" ui-sref="schools.subjects.classes.messages({classId:class.$id})">
+    {{class.name}}
   </div>
 
 </div>
+</ui-view>

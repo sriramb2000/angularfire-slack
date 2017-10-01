@@ -25,14 +25,14 @@
   <div class="sidebar">
     <ul class="ul1">
       <hr class="shr">
-      <li ng-click="showClasses({{subject.name}})" ng-repeat="subject in subjectsCtrl.subjects">
+      <li ng-repeat="subject in subjectsCtrl.subjects">
         <div class="classli" ui-sref="schools.subjects.classes({schoolId: subjectsCtrl.schoolId, subjectId: subject.$id})">{{subject.name}}</div>
       </li>
 
     </ul>
   </div>
   <div class="reststuff">
-    <ui-view>
+  <ui-view>
     <div class="titlebar">
       <i class="fa fa-lemon-o lemon1" aria-hidden="true"></i>lemon board
     </div>
@@ -40,19 +40,5 @@
   </div>
 </div>
 </div>
-<script type="text/javascript">
-  var app = angular.module("CapApp", []);
-  app.controller('lul', function($scope){
-    $scope.mathclasses=["ap calc","computer science", "statistics"];
-    $scope.engclasses=["ap calc","computer science", "statistics"];
-    $scope.ssclasses=["ap calc","computer science", "statistics"];
-    $scope.sciclasses=["ap calc","computer science", "statistics"];
-    $scope.etcclasses=["ap calc","computer science", "statistics"];
-    $scope.showClasses = function(x){
-      var holder = 'sub' + x.replace(" ", "");
-      document.getElementById(holder).style.display = "block";
-    }
-  });
-</script>
 </body>
 </html>
