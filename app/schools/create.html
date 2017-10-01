@@ -1,14 +1,32 @@
-<div>
-  <div class="sidebar">
+<div class="bodycontainer">
+<div class="bglul"></div>
+<div class="container">
+  <div class="red"></div>
+  <div class="bracket1"></div>
+  <div class="bracket2"></div>
+  <div class="addschool">If the search does not return your school, add it by clicking <a ui-sref="schools.create">here</a></div>
+  <div class="titlelul">
+    Lemon Board <i class="fa fa-lemon-o lemon" aria-hidden="true"></i>
   </div>
-  <div>
-    <h1>Add a School</h1>
-  </div>
+  <hr class="hra">
+  <div class="main1">
+    <div class="boi2">
+       <div class="words">Search for your school to get started:</div>
+       <div class="add">
 
-  <form ng-submit="schoolsCtrl.createSchool()">
-    <div class="input-group">
-      <input type="text" placeholder="School Name" ng-model="schoolsCtrl.newSchool.name">
+         <form>
+           <div class="input-group">
+             Add a Teacher:
+             <input class="inputmain" type="text" placeholder="School Name" ng-model="schoolsCtrl.newSchool.name">
+             <i ng-click="schoolsCtrl.createSchool()" class="fa fa-plus" aria-hidden="true"></i>
+           </div>
+         </form>
+       </div>
+       <div id="schoolid" class="schoolcont">
+			   <div id="{{school.$id}}" ui-sref="schools.subjects({schoolId: school.$id})" class="schoolname" ng-repeat="school in schoolsCtrl.schools | limitTo : 10">{{school.name}}</div>
+
+       </div>
     </div>
-    <input type="submit" value="Add School">
-  </form>
+  </div>
+</div>
 </div>
